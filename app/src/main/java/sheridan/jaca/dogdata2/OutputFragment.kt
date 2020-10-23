@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import sheridan.jaca.dogdata2.databinding.FragmentOutputBinding
 
@@ -21,6 +22,7 @@ private const val ARG_PARAM2 = "param2"
 class OutputFragment : Fragment() {
 
     private lateinit var binding: FragmentOutputBinding
+    private val viewModel: DogDataViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +35,8 @@ class OutputFragment : Fragment() {
         binding = FragmentOutputBinding.inflate(inflater,container,false)
 
         binding.btnBack.setOnClickListener { goBack() }
-
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.dogData = viewModel
         // Inflate the layout for this fragment
         return binding.root
     }
