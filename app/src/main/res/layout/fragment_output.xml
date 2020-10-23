@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="dogData"
+            type="sheridan.jaca.dogdata2.model.DogData" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".OutputFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:labelFor="@+id/lblName"
+                        android:textSize="20sp"
+                        android:text="Dog Name:" />
+
+                    <TextView
+                        android:id="@+id/lblName"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="20sp"
+                        android:text="@{dogData.name}" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:labelFor="@+id/lblTrained"
+                        android:textSize="20sp"
+                        android:text="Trained:" />
+
+                    <TextView
+                        android:id="@+id/lblTrained"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="20sp"
+                        android:text="@{dogData.trained ? @string/is_checked : @string/is_not_checked}" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:labelFor="@+id/lblVaccinate"
+                        android:textSize="20sp"
+                        android:text="Vaccinated: " />
+
+                    <TextView
+                        android:id="@+id/lblVaccinate"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="20sp"
+                        android:text="@{dogData.vaccinated ? @string/is_checked : @string/is_not_checked}" />
+                </TableRow>
+            </TableLayout>
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Go back" />
+        </LinearLayout>
+
+    </FrameLayout>
+</layout>
