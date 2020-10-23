@@ -37,7 +37,7 @@
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:textSize="20sp"
-                        android:text="@{dogData.name}" />
+                        android:text="@{dogData.getData.name}" />
                 </TableRow>
 
                 <TableRow>
@@ -54,7 +54,7 @@
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:textSize="20sp"
-                        android:text="@{dogData.trained ? @string/is_checked : @string/is_not_checked}" />
+                        android:text="@{dogData.getData.trained ? @string/is_checked : @string/is_not_checked}" />
                 </TableRow>
 
                 <TableRow>
@@ -71,7 +71,7 @@
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:textSize="20sp"
-                        android:text="@{dogData.vaccinated ? @string/is_checked : @string/is_not_checked}" />
+                        android:text="@{dogData.getData.vaccinated ? @string/is_checked : @string/is_not_checked}" />
                 </TableRow>
             </TableLayout>
 
